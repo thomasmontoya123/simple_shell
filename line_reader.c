@@ -16,7 +16,7 @@ char *line_reader(void)
 
 	lineChecker = getline(&inputLine, &buferSize, stdin);
 	if (lineChecker == EOF || lineChecker == -1)
-		exit(98);
+		exit(EXIT_FAILURE);
 
 	return (inputLine);
 }
