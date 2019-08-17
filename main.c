@@ -9,11 +9,11 @@
 int  main(void)
 {
 	char *inputLine, **arguments;
-	int status;
+	int status = 1;
 
 	do {
 
-		printf("($)");
+		printf("($) ");
 		inputLine = line_reader();
 		arguments = line_spliter(inputLine);
 		status = executer(arguments);
