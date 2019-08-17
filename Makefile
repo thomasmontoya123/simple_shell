@@ -15,3 +15,7 @@ clean:
 
 authors:
 	bash ./scripts/generate_authors.sh
+
+dbg: *.c *.h
+	$(CC) -g -ggdb $(CFLAGS) -o ./build/hsh *.c *.h
+	gdb ./build/hsh
