@@ -3,10 +3,10 @@
 /**
  * main - Entry point
  *
- * Return: void
+ * Return: always 0
  */
 
-void  main(void)
+int  main(void)
 {
 	char *inputLine, **arguments;
 	int status;
@@ -21,4 +21,7 @@ void  main(void)
 		free(arguments);
 
 	} while (status);
+
+
+	return (0);
 }
