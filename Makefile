@@ -12,3 +12,6 @@ test: tests.c ../holberton.h ../*.c
 clean:
 	rm ./build/*
 	rm -f ./test/runtest
+
+authors:
+	bash ./scripts/generate_authors.sh
