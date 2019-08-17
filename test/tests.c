@@ -23,6 +23,7 @@
 #include <check.h>
 #include <limits.h>
 #include <errno.h>
+#include "color_glo.h"
 #include "../shell_header.h"
 
 START_TEST (executer_tests)
