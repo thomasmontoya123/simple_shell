@@ -9,14 +9,13 @@
 
 char *line_reader(void)
 {
-	char *inputLine = NULL;
-	int lineChecker;
-	size_t buferSize = 0;
+	char *input_line = NULL;
+	int line_checker;
+	size_t bufer_size = 0;
 
-
-	lineChecker = getline(&inputLine, &buferSize, stdin);
-	if (lineChecker == EOF || lineChecker == -1)
+	line_checker = getline(&input_line, &bufer_size, stdin);
+	if (line_checker == EOF || line_checker == -1)
 		exit(EXIT_FAILURE);
 
-	return (inputLine);
+	return (input_line);
 }
