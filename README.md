@@ -19,12 +19,22 @@ Simple Shell files:
 ## Installation:
 Clone the repo:
 ```
-
+git clone https://github.com/thomasmontoya123/simple_shell.git
 ```
 
 ## Compile it:
 ```
-gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+make compile
+```
+
+## Run test suite
+```
+make test
+```
+
+## Run in debug mode
+```
+make dbg
 ```
 
 ## Example output interactive mode:
@@ -54,7 +64,7 @@ $
 
 
 ## Authors
-* [**Hernan Dario Castano**](https://github.com/dario-castano)
+* [**Hernan Dario Castaño**](https://github.com/dario-castano)
 * [**Thomas Montoya**](https://github.com/thomasmontoya123)
 
 -----
