@@ -6,7 +6,7 @@
  * Return: always 0
  */
 
-int  main(void)
+int main(void)
 {
 	char *inputLine, **arguments;
 	int status = 1;
@@ -21,7 +21,6 @@ int  main(void)
 		free(arguments);
 
 	} while (status);
-
 
 	return (0);
 }

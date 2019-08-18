@@ -12,12 +12,14 @@
 int executer(char **arguments)
 {
 	int status;
-	pid_t proccessId;
+	pid_t process_id;
 
+	if (*arguments == NULL)
+		return (1);
 
-	proccessId = fork();
+	process_id = fork();
 
-	if (proccessId == 0)
+	if (process_id == 0)
 	{
 		if (execve(arguments[0], arguments, NULL) == -1)
 		{
@@ -29,7 +31,7 @@ int executer(char **arguments)
 
 	}
 
-	else if (proccessId < 0)
+	else if (process_id < 0)
 		perror("Error");
 
 	else
