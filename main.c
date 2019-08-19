@@ -11,9 +11,9 @@ int main(void)
 	char *inputLine, **arguments;
 	int status = 1;
 
-	do {
+	do{
 
-		printf("($) ");
+		write (1, "($)", 3);
 		inputLine = line_reader();
 		arguments = line_spliter(inputLine);
 		status = executer(arguments);

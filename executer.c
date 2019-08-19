@@ -21,7 +21,7 @@ int executer(char **arguments)
 
 	if (process_id == 0)
 	{
-		if (execve(arguments[0], arguments, NULL) == -1)
+		if (execvp(arguments[0], arguments) == -1)
 		{
 			perror("Error");
 			return (0);
