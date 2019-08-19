@@ -3,6 +3,7 @@ CFLAGS=-Wall -Werror -Wextra -pedantic
 TESTLIBS=`pkg-config --cflags --libs check`
 
 compile: *.c *.h
+	mkdir -p ./build
 	$(CC) $(CFLAGS) -o ./build/hsh *.c *.h
 
 test: tests.c ../holberton.h ../*.c
@@ -10,7 +11,7 @@ test: tests.c ../holberton.h ../*.c
 	./test/runtest
 
 clean:
-	rm ./build/*
+	rm -f ./build/*
 	rm -f ./test/runtest
 
 authors:
