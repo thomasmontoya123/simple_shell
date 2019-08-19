@@ -12,8 +12,8 @@ int main(void)
 	int status = 1;
 
 	do {
-
-		printf("($) ");
+		if (isatty(STDIN_FILENO))
+			printf("($) ");
 		inputLine = line_reader();
 		arguments = line_spliter(inputLine);
 		status = executer(arguments);
