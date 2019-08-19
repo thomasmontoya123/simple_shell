@@ -35,7 +35,7 @@ int executer(char **arguments)
 		perror("Error");
 
 	else
-		wait(&status);	
+		wait(&status);
 
-	return (1);	
+	return (1);
 }
