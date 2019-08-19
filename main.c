@@ -14,7 +14,7 @@ int main(void)
 	do{
 
 		if (isatty(STDIN_FILENO))
-			write (1, "($)", 3);
+			write (1, "($) ", 4);
 
 		inputLine = line_reader();
 		arguments = line_spliter(inputLine);
