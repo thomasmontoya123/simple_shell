@@ -64,6 +64,10 @@ flycheck_*.el
 Session.vim
 Sessionx.vim
 
+# Build
+./build
+./build/*
+
 # Temporary
 .netrwhist
 # Auto-generated tag files
