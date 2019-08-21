@@ -11,12 +11,12 @@ int main(void)
 	char *inputLine, **arguments;
 	int status = 1;
 
-	do{
+	do {
 
 		if (isatty(STDIN_FILENO))
-			write (1, "($) ", 4);
+			write(1, "($) ", 4);
 
-		inputLine = line_reader();
+		inputLine = _getline();
 		arguments = line_spliter(inputLine);
 		status = executer(arguments);
 		free(inputLine);
