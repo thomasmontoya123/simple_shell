@@ -9,10 +9,15 @@
 #include <string.h>
 
 
-char *line_reader(void);
+char * _getline(void);
 
 char **line_spliter(char *inputLine);
 
 int executer(char **arguments);
+
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
+int _getchar(void);
+
 
 #endif
