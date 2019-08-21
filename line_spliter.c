@@ -21,12 +21,12 @@ char **line_spliter(char *inputLine)
 		return (NULL);
 
 
-	token = strtok(inputLine, tokenDelimiter);
+	token = _strtok(inputLine, tokenDelimiter);
 
 	while (token != NULL)
 	{
 		tokens[index] = token;
-		token = strtok(NULL, tokenDelimiter);
+		token = _strtok(NULL, tokenDelimiter);
 		index++;
 	}
 
