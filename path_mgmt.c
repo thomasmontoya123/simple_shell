@@ -1,8 +1,5 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "shell_header.h"
 #include <errno.h>
-#include <string.h>
 
 /**
  * set_fullpath - merge path+command to make an
@@ -64,7 +61,7 @@ char **get_path(void)
 		return (NULL);
 
 	path_len = count_path_delims(env_str);
-	out = calloc(path_len + 1 , sizeof(char *));
+	out = _calloc(path_len + 1 , sizeof(char *));
 
 	if (out == NULL)
 	{
@@ -109,7 +106,7 @@ char *cmd_path(char *cmd, char **path)
 
 	while (*path != NULL)
 	{
-		fullname = calloc(strlen(cmd) + strlen(*path) + 2, sizeof(char));
+		fullname = _calloc(strlen(cmd) + strlen(*path) + 2, sizeof(char));
 		if (fullname == NULL)
 		{
 			errno = ENOMEM;
