@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char *inputLine, **arguments;
+	char *input_line, **arguments;
 	int status = 1;
 
 	do {
@@ -16,10 +16,10 @@ int main(void)
 		if (isatty(STDIN_FILENO))
 			write(1, "($) ", 4);
 
-		inputLine = _getline();
-		arguments = line_spliter(inputLine);
+		input_line = line_reader();
+		arguments = line_spliter(input_line);
 		status = executer(arguments);
-		free(inputLine);
+		free(input_line);
 		free(arguments);
 
 	} while (status);

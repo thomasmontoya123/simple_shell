@@ -14,10 +14,10 @@ char *_getline(void)
 
 	index = 0;
 	buffer_size = 100;
-	input_line = malloc(sizeof(char) * 100);
+	input_line = _calloc(buffer_size, sizeof(char));
 	if (!input_line)
 	{
-		perror("Malloc fails\n");
+		perror("Calloc fails\n");
 		return (NULL);
 	}
 	while (1)

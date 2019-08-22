@@ -121,7 +121,7 @@ char *cmd_path(char *cmd, char **path)
 			return (fullname);
 
 		free(fullname);
-		*path++;
+		path++;
 	}
 
 	return (NULL);
