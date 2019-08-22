@@ -4,6 +4,16 @@
 #include <errno.h>
 #include <string.h>
 
+/**
+ * set_fullpath - merge path+command to make an
+ * absolute path
+ * 
+ * @target: place where you are going to put the path
+ * @path: path without command
+ * @cmd: command you want to add
+ * 
+ * Return: void
+ */
 void set_fullpath(char *target, char *path, char *cmd)
 {
 	strcat(target, path);
@@ -11,6 +21,14 @@ void set_fullpath(char *target, char *path, char *cmd)
 	strcat(target, cmd);
 }
 
+/**
+ * count_path_delims - count the number of dirs
+ * inside the path
+ * 
+ * @str: the full path variable
+ * 
+ * Return: number of places in the path
+ */ 
 unsigned int count_path_delims(char *str)
 {
 	int i = 0;
@@ -25,6 +43,14 @@ unsigned int count_path_delims(char *str)
 	return (i + 1);
 }
 
+/**
+ * get_path - returns the env $PATH variable
+ * fully tokenized
+ * 
+ * Return: $PATH tokenized
+ * 
+ * -->YOU MUST FREE AFTER USE!<--
+ */
 char **get_path(void)
 {
 	char **out;
@@ -43,7 +69,7 @@ char **get_path(void)
 	if (out == NULL)
 	{
 		errno = ENOMEM;
-		perror("ERROR");
+		perror("Allocation failure");
 		return (NULL);
 	}
 
@@ -61,6 +87,18 @@ char **get_path(void)
 	return (out);
 }
 
+/**
+ * cmd_path - search for a command in a tokenized
+ * $PATH
+ * 
+ * @cmd: command you want to find
+ * @path: a tokenized $PATH environment var
+ * 
+ * Return: full path of the executable -> success
+ * otherwise NULL
+ * 
+ * -->YOU MUST FREE AFTER USE!<--
+ */
 char *cmd_path(char *cmd, char **path)
 {
 	int file_found;
@@ -75,6 +113,7 @@ char *cmd_path(char *cmd, char **path)
 		if (fullname == NULL)
 		{
 			errno = ENOMEM;
+			perror("Allocation failure");
 			return (NULL);
 		}
 
@@ -91,6 +130,16 @@ char *cmd_path(char *cmd, char **path)
 	return (NULL);
 }
 
+/**
+ * find_path - finds a command in system's $PATH
+ * 
+ * @cmd: command to find
+ * 
+ * Return: full path of the executable -> success
+ * otherwise NULL
+ * 
+ * -->YOU MUST FREE AFTER USE!<--
+ */
 char *find_path(char *cmd)
 {
 	char **env_path = get_path();
