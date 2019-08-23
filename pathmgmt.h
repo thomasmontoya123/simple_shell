@@ -7,5 +7,6 @@ char **get_path(void);
 char *cmd_path(char *cmd, char **path);
 char *find_path(char *cmd);
 char *_getenv(const char *name);
+int runpath(char **arguments);
 
 #endif
