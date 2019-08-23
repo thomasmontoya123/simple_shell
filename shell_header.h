@@ -20,4 +20,23 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _getchar(void);
 
 
+
+int _strcmp(char *s1, char *s2);
+
+int _strlen(char *s);
+
+int environment_builtin(char **environment);
+
+int help(__attribute__((unused)) char **arguments);
+
+int cd(char **arguments);
+
+int exit_builtin(char **arguments);
+
+int launcher(char **arguments, char **environment);
+
+int _atoi(char *s);
+
+
+
 #endif
