@@ -1,4 +1,5 @@
 #include "shell_header.h"
+#include "pathmgmt.h"
 #include <errno.h>
 
 /**
@@ -55,7 +56,7 @@ char **get_path(void)
 	char *env_str;
 	unsigned int i, path_len;
 
-	env_str = getenv("PATH");
+	env_str = _getenv("PATH");
 
 	if (env_str == NULL)
 		return (NULL);
