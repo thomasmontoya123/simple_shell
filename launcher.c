@@ -18,6 +18,10 @@ int launcher(char **arguments, char **environment)
 	int index, exit_return = 0;
 	int exit_argument = 0;
 
+
+	if (*arguments == NULL)
+		return (1);
+
 	for (index = 0; index < number_of_builtins; index++)
 	{
 		if (_strcmp(arguments[0], "env") == 0)
