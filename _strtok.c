@@ -8,8 +8,8 @@
  * @delim: Array of delimitators
  * @save_ptr: Pointer who saves the next word
  * Return: A token
- */ 
-char *_strtok_mod (char *str, const char *delim, char **save_ptr)
+ */
+char *_strtok_mod(char *str, const char *delim, char **save_ptr)
 {
 	char *end;
 
@@ -18,7 +18,7 @@ char *_strtok_mod (char *str, const char *delim, char **save_ptr)
 	if (*str == '\0')
 	{
 		*save_ptr = str;
-		return NULL;
+		return (NULL);
 	}
 
 	/* Moves the pointer to the span */
@@ -27,7 +27,7 @@ char *_strtok_mod (char *str, const char *delim, char **save_ptr)
 	if (*str == '\0')
 	{
 		*save_ptr = str;
-		return NULL;
+		return (NULL);
 	}
 
 	end = str + strcspn(str, delim);
@@ -35,12 +35,12 @@ char *_strtok_mod (char *str, const char *delim, char **save_ptr)
 	if (*end == '\0')
 	{
 		*save_ptr = end;
-		return str;
+		return (str);
 	}
 
 	*end = '\0';
 	*save_ptr = end + 1;
-	return str;
+	return (str);
 }
 
 /**
@@ -48,9 +48,11 @@ char *_strtok_mod (char *str, const char *delim, char **save_ptr)
  * @str: String to evaluate
  * @delimiters: Array of delimitators
  * Return: A token
- */ 
+ */
 char *_strtok(char *str, const char *delimiters)
 {
 	static char *oldstr;
-	return _strtok_mod(str, delimiters, &oldstr);
+
+	return (_strtok_mod(str, delimiters, &oldstr));
 }
+

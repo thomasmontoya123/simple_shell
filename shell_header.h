@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <string.h>
 
+extern char **environ;
+
 char *line_reader(void);
 char **line_spliter(char *inputLine);
 int executer(char **arguments);

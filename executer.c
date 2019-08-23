@@ -21,7 +21,7 @@ int executer(char **arguments)
 		return (1);
 
 	process_id = fork();
-	
+
 	if (process_id == 0)
 	{
 		if (strchr(arguments[0], '/') != NULL)

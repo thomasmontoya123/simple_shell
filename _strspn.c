@@ -34,3 +34,4 @@ unsigned int _strspn(char *s, const char *accept)
 
 	return (count);
 }
+

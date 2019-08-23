@@ -5,11 +5,11 @@
 /**
  * set_fullpath - merge path+command to make an
  * absolute path
- * 
+ *
  * @target: place where you are going to put the path
  * @path: path without command
  * @cmd: command you want to add
- * 
+ *
  * Return: void
  */
 void set_fullpath(char *target, char *path, char *cmd)
@@ -22,11 +22,11 @@ void set_fullpath(char *target, char *path, char *cmd)
 /**
  * count_path_delims - count the number of dirs
  * inside the path
- * 
+ *
  * @str: the full path variable
- * 
+ *
  * Return: number of places in the path
- */ 
+ */
 unsigned int count_path_delims(char *str)
 {
 	int i = 0;
@@ -44,9 +44,9 @@ unsigned int count_path_delims(char *str)
 /**
  * get_path - returns the env $PATH variable
  * fully tokenized
- * 
+ *
  * Return: $PATH tokenized
- * 
+ *
  * -->YOU MUST FREE AFTER USE!<--
  */
 char **get_path(void)
@@ -62,7 +62,7 @@ char **get_path(void)
 		return (NULL);
 
 	path_len = count_path_delims(env_str);
-	out = _calloc(path_len + 1 , sizeof(char *));
+	out = _calloc(path_len + 1, sizeof(char *));
 
 	if (out == NULL)
 	{
@@ -71,7 +71,7 @@ char **get_path(void)
 		return (NULL);
 	}
 
-	token = strtok(env_str,":");
+	token = strtok(env_str, ":");
 	*out = token;
 
 	for (i = 1; i < path_len; i++)
@@ -88,13 +88,13 @@ char **get_path(void)
 /**
  * cmd_path - search for a command in a tokenized
  * $PATH
- * 
+ *
  * @cmd: command you want to find
  * @path: a tokenized $PATH environment var
- * 
+ *
  * Return: full path of the executable -> success
  * otherwise NULL
- * 
+ *
  * -->YOU MUST FREE AFTER USE!<--
  */
 char *cmd_path(char *cmd, char **path)
@@ -130,12 +130,12 @@ char *cmd_path(char *cmd, char **path)
 
 /**
  * find_path - finds a command in system's $PATH
- * 
+ *
  * @cmd: command to find
- * 
+ *
  * Return: full path of the executable -> success
  * otherwise NULL
- * 
+ *
  * -->YOU MUST FREE AFTER USE!<--
  */
 char *find_path(char *cmd)
@@ -148,3 +148,4 @@ char *find_path(char *cmd)
 	free(env_path);
 	return (out);
 }
+
