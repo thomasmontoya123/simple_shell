@@ -16,7 +16,7 @@ int executer(char **arguments);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _getchar(void);
 unsigned int _strspn(char *s, const char *accept);
-char *_strtok_mod (char *str, const char *delim, char **save_ptr);
+char *_strtok_mod(char *str, const char *delim, char **save_ptr);
 char *_strtok(char *str, const char *delimiters);
 char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
