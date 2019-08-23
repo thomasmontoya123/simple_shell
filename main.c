@@ -6,10 +6,14 @@
  * Return: always 0
  */
 
-int main(void)
+int main(int argc, char *argv[], char *envp[])
 {
 	char *inputLine, **arguments;
 	int status = 1;
+
+	(void) argc;
+	(void) argv;
+
 
 	do {
 
@@ -18,7 +22,7 @@ int main(void)
 
 		inputLine = _getline();
 		arguments = line_spliter(inputLine);
-		status = executer(arguments);
+		status = launcher(arguments, envp);
 		free(inputLine);
 		free(arguments);
 
