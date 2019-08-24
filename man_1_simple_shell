@@ -1,0 +1,58 @@
+.TH "HSH" "1" "1.0.0" "Thomas Montoya - Dario Castaño" "General Commands Manual"
+.SH "NAME"
+hsh - Holberotn's Simple sHell
+.br
+.SH "SYNTAX"
+hsh <\fIfilename\fR>
+.br
+.SH "DESCRIPTION"
+Holberton's simple shell is an sh-compatible command language interpreter that executes commands read from the standard input or from a file.
+.br
+.SH "OPTIONS"
+\fB--help\fR
+.br
+		Output help information and exit.
+.br
+
+\fB--version\fR
+.br
+		Output version information and exit.
+.br
+.SH "FILES"
+\fI/etc/myprogram\fR
+.br
+\fI/var/log\fR
+.br
+.SH "ENVIRONMENT VARIABLES"
+\fBHOME\fR
+.br
+		Specifies the home directory
+.br
+
+\fBLOGINNAME\fR
+.br
+		Specifies the user's login name
+.br
+
+\fBPRINTER\fR
+.br
+		Specifies the printer
+.br
+.SH "EXAMPLES"
+To run this program the standard way type:
+.br
+
+myprogram /tmp/myfile
+.br
+
+Alternatively you can run it as:
+.br
+
+myprogram -dscan /tmp
+.br
+.SH "AUTHORS"
+me <me@myhost.org>
+.br
+.SH "SEE ALSO"
+myotherprogram(2) mynextprogram(2)
+.br
