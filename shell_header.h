@@ -20,24 +20,15 @@ char *_strtok_mod(char *str, const char *delim, char **save_ptr);
 char *_strtok(char *str, const char *delimiters);
 char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
-
-
 int _strcmp(char *s1, char *s2);
-
 int _strlen(char *s);
-
 int environment_builtin(char **environment);
-
 int help(__attribute__((unused)) char **arguments);
-
 int cd(char **arguments);
-
 int exit_builtin(char **arguments);
-
 int launcher(char **arguments, char **environment);
-
 int _atoi(char *s);
-
+char * _getline(void);
 
 
 #endif
