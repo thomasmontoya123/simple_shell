@@ -21,7 +21,7 @@ int executer(char **arguments)
 
 	if (process_id == 0)
 	{
-		if (strchr(arguments[0], '/') != NULL)
+		if (_strchr(arguments[0], '/') != NULL)
 		{
 			exec_status = execve(arguments[0], arguments, NULL);
 			if (exec_status == -1)

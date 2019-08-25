@@ -30,7 +30,7 @@ char *_strtok_mod(char *str, const char *delim, char **save_ptr)
 		return (NULL);
 	}
 
-	end = str + strcspn(str, delim);
+	end = str + _strcspn(str, delim);
 
 	if (*end == '\0')
 	{
