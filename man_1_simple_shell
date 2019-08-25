@@ -1,12 +1,22 @@
-.TH "HSH" "1" "1.0.0" "Thomas Montoya - Dario Castaño" "General Commands Manual"
+.TH "HSH" "1" "1.0.0" "Thomas Montoya - Dario Casta" "General Commands Manual"
 .SH "NAME"
-hsh - Holberotn's Simple sHell
+hsh - Holberton's Simple sHell
 .br
-.SH "SYNTAX"
-hsh <\fIfilename\fR>
+.SH "SYNOPSIS"
+hsh [<\fIfilename\fR>]
 .br
 .SH "DESCRIPTION"
 Holberton's simple shell is an sh-compatible command language interpreter that executes commands read from the standard input or from a file.
+.br
+
+This program acts as a bridge between the user and the system, making it possible to convert the orders that are introduced, into actions performed by the computer, either through human intervention in interactive mode, the execution of a command through a pipe, or the loading of a file containing the orders that the system must execute.
+.br
+
+.SS "INVOCATION"
+If no args are present and if the standard input of the shell is connected to a terminal, the shell is considered an interactive shell. An interactive shell generally prompts before each command and handles programming and command errors differently.
+.br
+
+When the first argument consists of a file, the program proceeds to perform the sequential execution line by line, taking into account that it will first search for the identifier that points to the file as suitable for the execution of the instructions (shebang).
 .br
 .SH "OPTIONS"
 \fB--help\fR
@@ -18,41 +28,39 @@ Holberton's simple shell is an sh-compatible command language interpreter that e
 .br
 		Output version information and exit.
 .br
-.SH "FILES"
-\fI/etc/myprogram\fR
-.br
-\fI/var/log\fR
-.br
-.SH "ENVIRONMENT VARIABLES"
-\fBHOME\fR
-.br
-		Specifies the home directory
-.br
-
-\fBLOGINNAME\fR
-.br
-		Specifies the user's login name
-.br
-
-\fBPRINTER\fR
-.br
-		Specifies the printer
-.br
 .SH "EXAMPLES"
-To run this program the standard way type:
+To run this program in interactive mode:
 .br
 
-myprogram /tmp/myfile
+\fB./hsh\fR
 .br
 
-Alternatively you can run it as:
+A prompt symbol shows the program is ready to receive commands:
 .br
 
-myprogram -dscan /tmp
+\fB($)\fR
+.br
+
+The user can write commands with or without arguments, and the shell runs that after press the ENTER key.
+.br
+
+\fB($) uname
+.br
+Linux\fR
+.br
+
+The shell can receive data using standard Unix pipes.
+.br
+
+\fB$ echo "uname" | ./hsh
+.br
+Linux\fR
 .br
 .SH "AUTHORS"
-me <me@myhost.org>
+Thomas Montoya <tomasmontoya123@gmail.com>
+.br
+Dario Castaño <dario.castano@aim.com>
 .br
 .SH "SEE ALSO"
-myotherprogram(2) mynextprogram(2)
+bash(1) dash(1)
 .br
