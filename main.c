@@ -1,4 +1,6 @@
+#include <signal.h>
 #include "shell_header.h"
+#include "signal_handling.h"
 
 /**
  * main - Entry point
@@ -14,6 +16,7 @@ int main(int argc, char *argv[], char *envp[])
 	(void) argc;
 	(void) argv;
 
+	signal(SIGINT, blank);
 
 	do {
 
