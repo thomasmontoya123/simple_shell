@@ -1,6 +1,9 @@
 # Created by https://www.gitignore.io/api/vim,emacs,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=vim,emacs,visualstudiocode
 
+build/
+build/*
+
 ### Emacs ###
 # -*- mode: gitignore; -*-
 *~
