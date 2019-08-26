@@ -34,7 +34,7 @@ int launcher(char **arguments, char **environment)
 			if (exit_argument < 0)
 			{
 				write(1, "exit: illegal number: ", 23);
-				free (arguments);
+				free(arguments);
 				exit(EXIT_FAILURE);
 			}
 			if (exit_return == -1)
