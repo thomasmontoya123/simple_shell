@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define BUF_MAX  2097152
+
 extern char **environ;
 
 char *line_reader(void);
