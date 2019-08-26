@@ -13,7 +13,8 @@ char *_getline(void)
 	int ascii_character, index, buffer_size;
 
 	index = 0;
-	buffer_size = 100;
+	buffer_size = BUF_MAX;
+	input_line = NULL;
 	input_line = _calloc(buffer_size, sizeof(char));
 	if (!input_line)
 	{
@@ -22,10 +23,12 @@ char *_getline(void)
 	}
 	while (1)
 	{
-		ascii_character = _getchar();
+		ascii_character = getchar();
 		if (ascii_character == EOF)
+		{
+			free(input_line);
 			exit(EXIT_FAILURE);
-
+		}
 		else if (ascii_character == '\n')
 		{
 			input_line[index] = '\0';
@@ -33,7 +36,6 @@ char *_getline(void)
 		}
 		else
 			input_line[index] = ascii_character;
-
 		index++;
 		if (index >= (buffer_size - 1))
 		{
@@ -42,6 +44,7 @@ char *_getline(void)
 			if (!input_line)
 			{
 				perror("Realloc fails\n");
+				free(input_line);
 				exit(EXIT_FAILURE);
 			}
 		}
