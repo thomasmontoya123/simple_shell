@@ -17,7 +17,7 @@ int exit_builtin(char **arguments)
 
 	if (arguments[1] == NULL)
 	{
-		free (arguments);
+		free(arguments);
 		exit(EXIT_SUCCESS);
 	}
 	for (i = 0; arguments[1][i]; i++)
