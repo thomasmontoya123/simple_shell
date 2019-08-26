@@ -15,7 +15,7 @@ char **line_spliter(char *inputLine)
 	int index = 0;
 	const char tokenDelimiter[] = {" \n\r\t\a"};
 
-	tokens = malloc(sizeof(char *) * 25);
+	tokens = _calloc(98, sizeof(char *));
 
 	if (!tokens)
 		return (NULL);
