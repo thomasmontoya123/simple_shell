@@ -5,6 +5,10 @@
 /**
  * main - Entry point
  *
+ * @argc: argument counter
+ * @argv: argument value
+ * @envp: environmet variables
+ *
  * Return: always 0
  */
 
