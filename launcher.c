@@ -1,17 +1,17 @@
 #include "shell_header.h"
 
+static char *builtin_name[] = {"cd", "help", "env", "exit"};
+static int number_of_builtins = 4;
+
+int (*builtin_function[]) (char **) = {&cd, &help, &environment_builtin,
+&exit_builtin};
+
 /**
  * launcher - check for builtins and execute.
  * @arguments: arguments
  * @environment: env variables.
  * Return: depends on executer.
  */
-
-static char *builtin_name[] = {"cd", "help", "env", "exit"};
-static int number_of_builtins = 4;
-
-int (*builtin_function[]) (char **) = {&cd, &help, &environment_builtin,
-&exit_builtin};
 
 int launcher(char **arguments, char **environment)
 {
