@@ -2,6 +2,7 @@
 
 /**
  * help - print shell help
+ * @arguments: arguments
  *
  * Return: void
  */
