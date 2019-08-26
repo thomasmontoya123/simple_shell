@@ -16,8 +16,10 @@ int exit_builtin(char **arguments)
 	number = 0;
 
 	if (arguments[1] == NULL)
+	{
+		free (arguments);
 		exit(EXIT_SUCCESS);
-
+	}
 	for (i = 0; arguments[1][i]; i++)
 	{
 		if ((arguments[1][i] >= '0' && arguments[1][i] <= '9')
