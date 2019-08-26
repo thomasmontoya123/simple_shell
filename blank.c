@@ -17,5 +17,4 @@
 void blank(int signum)
 {
 	(void) signum;
-	return;
 }
