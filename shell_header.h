@@ -34,8 +34,4 @@ int _atoi(char *s);
 char *_getline(void);
 char *_strchr(const char *s, int c);
 
-char *builtin_name[4]; 
-int number_of_builtins; 
-
-
 #endif
