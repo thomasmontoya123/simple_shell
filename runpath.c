@@ -23,7 +23,7 @@ int runpath(char **arguments)
 	else
 	{
 		arguments[0] = found_path;
-		exec_status = execve(arguments[0], arguments, NULL);
+		exec_status = execve(arguments[0], arguments, environ);
 		if (exec_status == -1)
 		{
 			free(found_path);

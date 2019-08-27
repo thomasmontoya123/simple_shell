@@ -24,6 +24,7 @@ int main(int argc, char *argv[], char *envp[])
 	signal(SIGINT, blank);
 
 	setenv("OLDPWD", _getenv("PWD"), 1);
+	setenv("TERM", "xterm-256color",1);
 
 	do {
 

@@ -23,7 +23,7 @@ int executer(char **arguments)
 	{
 		if (_strchr(arguments[0], '/') != NULL)
 		{
-			exec_status = execve(arguments[0], arguments, NULL);
+			exec_status = execve(arguments[0], arguments, environ);
 			if (exec_status == -1)
 			{
 				perror("Exec error");
