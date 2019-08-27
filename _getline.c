@@ -23,7 +23,7 @@ char *_getline(void)
 	}
 	while (1)
 	{
-		ascii_character = getchar();
+		ascii_character = _getchar();
 		if (ascii_character == EOF)
 		{
 			free(input_line);
