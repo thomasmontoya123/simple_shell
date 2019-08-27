@@ -1,6 +1,7 @@
 #include <signal.h>
 #include "shell_header.h"
 #include "signal_handling.h"
+#include "pathmgmt.h"
 
 /**
  * main - Entry point
@@ -22,10 +23,13 @@ int main(int argc, char *argv[], char *envp[])
 
 	signal(SIGINT, blank);
 
+	setenv("OLDPWD", _getenv("PWD"), 1);
+
 	do {
 
 		if (isatty(STDIN_FILENO))
 			write(1, "($) ", 4);
+
 
 		input_line = _getline();
 		arguments = line_spliter(input_line);
