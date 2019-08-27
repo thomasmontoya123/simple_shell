@@ -8,26 +8,22 @@
 
 int _getchar(void)
 {
-	char buffer[1024];
-	static int  first, last;
-	int ascii_character = 0;
+	char *character, buffer[1];
+	int read_descriptor = 0;
 
+	read_descriptor = read(STDIN_FILENO, buffer, 1);
 
-
-	if (first == last)
+	if (read_descriptor > 0)
 	{
-		ascii_character = read(0, buffer, 1024);
-		if (ascii_character == 0)
-			return (EOF);
-
-	last = ascii_character;
-	first = 0;
-
+		character = buffer;
+		return (*character);
 	}
 
-
-	if (ascii_character >= 0)
-		return (buffer[first++]);
+	else if (read_descriptor == -1)
+	{
+		perror("Error reading");
+		return (0);
+	}
 
 	return (EOF);
 }
