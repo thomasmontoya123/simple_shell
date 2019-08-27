@@ -17,11 +17,11 @@ int cd(char **arguments)
 	int cwd_size = 0;
 
 	if (!arguments[1] || (arguments[1][0] == '~' && !arguments[1][1]))
-		chdir(getenv("HOME"));
+		chdir(_getenv("HOME"));
 
 	else if (arguments[1][0] == '-' && !arguments[1][1])
 	{
-		chdir(getenv("OLDPWD"));
+		chdir(_getenv("OLDPWD"));
 		getcwd(cwd, sizeof(cwd));
 		for (index = 0; cwd[index] != '\0'; index++)
 			cwd_size++;
@@ -42,7 +42,7 @@ int cd(char **arguments)
 	else
 		write(1, "Could not find the directory\n", 30);
 
-	setenv("OLDPWD", getenv("PWD"), 1);
+	setenv("OLDPWD", _getenv("PWD"), 1);
 	setenv("PWD", getcwd(pwd_update, sizeof(pwd_update)), 1);
 
 	return (1);
