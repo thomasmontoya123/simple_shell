@@ -42,6 +42,7 @@ int launcher(char **arguments, char **environment)
 
 			else
 			{
+				free(arguments[0]);
 				free(arguments);
 				exit(exit_return);
 			}
