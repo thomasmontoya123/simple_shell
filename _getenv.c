@@ -20,7 +20,7 @@ char *_getenv(const char *name)
 	{
 		if (strncmp(*ptr, name, namelen) == 0)
 		{
-			out = *ptr + namelen;
+			out = *ptr + namelen + 1;
 			return (out);
 		}
 		ptr++;
