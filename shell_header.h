@@ -34,8 +34,10 @@ int _atoi(char *s);
 char *_getline(void);
 char *_strchr(const char *s, int c);
 int _strncmp(const char *s1, const char *s2, size_t n);
-void _setenv(char *arg1, char *arg2, char *new_envs[]);
+int _setenv(const char *name, const char *value, int overwrite);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
+unsigned int environlen(void);
+char *buildenv_key_val(const char *name, const char *value);
 
 #endif
