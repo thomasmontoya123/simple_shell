@@ -9,12 +9,9 @@
 
 char *_getline(void)
 {
-	char *input_line;
-	int ascii_character, index, buffer_size;
+	char *input_line = NULL;
+	int ascii_character, index = 0, buffer_size = BUF_MAX;
 
-	index = 0;
-	buffer_size = BUF_MAX;
-	input_line = NULL;
 	input_line = _calloc(buffer_size, sizeof(char));
 	if (!input_line)
 	{
@@ -27,15 +24,16 @@ char *_getline(void)
 		if (ascii_character == EOF)
 		{
 			free(input_line);
-			exit(EXIT_FAILURE);
+			exit(EXIT_SUCCESS);
 		}
 		else if (ascii_character == '\n')
 		{
 			input_line[index] = '\0';
 			return (input_line);
 		}
-		else
-			input_line[index] = ascii_character;
+		input_line[index] = ascii_character;
+		if (ascii_character == '#')
+			input_line[index] = 0;
 		index++;
 		if (index >= (buffer_size - 1))
 		{
@@ -49,4 +47,5 @@ char *_getline(void)
 			}
 		}
 	}
+	return (input_line);
 }
