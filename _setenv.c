@@ -1,7 +1,6 @@
 #include "shell_header.h"
 
 /**
-*
 * _setenv - Function to handle the setenv.
 * @arg1: Name of the variable to be set.
 * @arg2: Value for the variable.
