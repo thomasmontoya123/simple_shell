@@ -1,10 +1,3 @@
-/*
- * blank.c
- *
- *  Created on: Aug 24, 2019
- *      Author: dario
- */
-
 #include <stdio.h>
 
 /**

@@ -23,7 +23,7 @@ char *_strtok(char *str, const char *delimiters);
 char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
 int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
+int _strlen(const char *s);
 ssize_t _strcspn(const char *s, const char *reject);
 int environment_builtin(char **environment);
 int help(__attribute__((unused)) char **arguments);
@@ -33,5 +33,6 @@ int launcher(char **arguments, char **environment);
 int _atoi(char *s);
 char *_getline(void);
 char *_strchr(const char *s, int c);
+int _strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

@@ -1,10 +1,3 @@
-/*
- * _strchr.c
- *
- *  Created on: Aug 24, 2019
- *      Author: dario
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 

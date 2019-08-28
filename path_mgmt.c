@@ -107,7 +107,7 @@ char *cmd_path(char *cmd, char **path)
 
 	while (*path != NULL)
 	{
-		fullname = _calloc(strlen(cmd) + _strlen(*path) + 2, sizeof(char));
+		fullname = _calloc(_strlen(cmd) + _strlen(*path) + 2, sizeof(char));
 		if (fullname == NULL)
 		{
 			errno = ENOMEM;

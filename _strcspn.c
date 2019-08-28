@@ -1,12 +1,6 @@
-/*
- * _strcspn.c
- *
- *  Created on: Aug 24, 2019
- *      Author: dario
- */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "shell_header.h"
 
 /**
  * _strcspn - count characters until the first

@@ -42,7 +42,7 @@ int _strcmp(char *s1, char *s2)
  *
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int a = 0;
 

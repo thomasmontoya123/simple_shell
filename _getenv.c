@@ -10,7 +10,7 @@
  */
 char *_getenv(const char *name)
 {
-	int namelen = strlen(name);
+	int namelen = _strlen(name);
 	char **ptr;
 	char *out;
 
@@ -18,7 +18,7 @@ char *_getenv(const char *name)
 
 	while (*ptr != NULL)
 	{
-		if (strncmp(*ptr, name, namelen) == 0)
+		if (_strncmp(*ptr, name, namelen) == 0)
 		{
 			out = *ptr + namelen + 1;
 			return (out);
