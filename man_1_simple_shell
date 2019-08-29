@@ -3,7 +3,7 @@
 hsh - Holberton's Simple sHell
 .br
 .SH "SYNOPSIS"
-hsh [<\fIfilename\fR>]
+\fBhsh\fR [<\fIfilename\fR>]
 .br
 .SH "DESCRIPTION"
 Holberton's simple shell is an sh-compatible command language interpreter that executes commands read from the standard input or from a file.
@@ -18,15 +18,44 @@ If no args are present and if the standard input of the shell is connected to a 
 
 When the first argument consists of a file, the program proceeds to perform the sequential execution line by line, taking into account that it will first search for the identifier that points to the file as suitable for the execution of the instructions (shebang).
 .br
-.SH "OPTIONS"
-\fB--help\fR
+.SS "SIGNAL HANDLING"
+\fBhsh\fR disables the operation of the SIGINT and Ctrl+C key combination.
 .br
-		Output help information and exit.
+.SH "OPTIONS"
+Actually this program has no options available. 
+.br
+.SH "BUILT-INS"
+\fBhsh\fR has 4 builtins embedded:
 .br
 
-\fB--version\fR
+		\fBcd\fR		Change directory option. Operation without parameters or special symbols are allowed
 .br
-		Output version information and exit.
+		
+.br
+		\fBhelp\fR	Shows help pages. The user can type the builtin as parameter and ask for help about details
+.br
+				related to the builtin
+.br
+		
+.br
+		\fBenv\fR		Prints the environment
+.br
+		
+.br
+		\fBexit\fR	Exits the shell. The user can write a positive number as parameter to throw as a return value
+.br
+.SH "RETURN VALUES"
+In normal operation, \fBhsh\fR should finish its runtime with a zero value. That indicates successful operation.
+.br
+
+Errors related with memory allocation should exit with -1 and the corresponding errno value:
+.br
+
+		\fBENOMEM\fR		Out of memory
+.br
+		
+.br
+Failures on built-ins should return -1, showing abnormal operation.
 .br
 .SH "EXAMPLES"
 To run this program in interactive mode:
@@ -52,7 +81,7 @@ Linux\fR
 The shell can receive data using standard Unix pipes.
 .br
 
-\fB$ echo "uname" | ./hsh
+\fB$ echo "uname" | hsh
 .br
 Linux\fR
 .br
