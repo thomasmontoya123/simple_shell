@@ -12,7 +12,7 @@
 int cd(char **arguments)
 {
 
-	char pwd_update[1024], cwd[1024];
+	char cwd[1024];
 	int index;
 	int cwd_size = 0;
 
@@ -42,8 +42,6 @@ int cd(char **arguments)
 	else
 		write(1, "Could not find the directory\n", 30);
 
-	_setenv("OLDPWD", _getenv("PWD"), environ);
-	_setenv("PWD", getcwd(pwd_update, sizeof(pwd_update)), environ);
 
 	return (1);
 }
